@@ -42,7 +42,11 @@ function CartProviderWrapper(props) {
 
   const buyCart = () => {
     // Log the product to be added
-    alert("You just spent:" + cart.reduce((a, b) => a + b.price, 0) + " euros");
+    alert(
+      "You just spent:" +
+        cart.reduce((a, b) => a + b.price, 0).toFixed(2) +
+        " euros"
+    );
 
     // Update the cart state
     setCart([]);

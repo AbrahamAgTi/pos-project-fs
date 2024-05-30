@@ -3,6 +3,7 @@ import { CartContext } from "../context/cart.context";
 import { useContext } from "react";
 import Product from "../components/Product";
 import { Button } from "react-bootstrap";
+import ProductsInCart from "../components/ProductsInCart";
 
 function CheckoutPage() {
   const { cart, buyCart } = useContext(CartContext);
@@ -12,28 +13,13 @@ function CheckoutPage() {
   return (
     <>
       Are you sure you want to buy this?
-      <div className="product-cart">
-          {cart.map((item) => (
-            <div key={item._id}>
-              <h3>{item.name}</h3>
-              <p>{item.description}</p>
-              <div className="price">{item.price} €</div>
-            </div>
-          ))}
-
-          <hr />
-
-          <div className="total">
-            Total: {cart.reduce((a, b) => a + b.price, 0)} €
-          </div>
-        </div>
+      <ProductsInCart></ProductsInCart>
       <Button onClick={() => buyCart()} variant="primary">
-       Buy
+        Buy
       </Button>
     </>
   );
 }
-
 
 // when you buy
 
@@ -42,7 +28,5 @@ function CheckoutPage() {
 
 
 */
-
-
 
 export default CheckoutPage;
