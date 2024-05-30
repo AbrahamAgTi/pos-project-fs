@@ -15,6 +15,7 @@ function NavBar() {
             <div className='left'>
                 {isLoggedIn ? <>
                     <Link to={`/products`}>Products Page</Link>
+                    <Link to={`/cart`}>Your Cart</Link>
                     <button onClick={logOutUser}>Log Out</button>
                 </>
                     :
